@@ -75,7 +75,7 @@ Narobe: za vsak realen pozitiven x obstaja $k \in \mathbb{N}$, da je $0$ < $1/k$
 % Matematični izrazi v prikaznem načinu se pišejo med znaka \[...\] ali $$...$$,
 % še raje pa uporabimo kakšno od okolij AMS, glej spodaj.
 % Pravila za pisanje izrazov v prikaznem načinu:
-% 1. Ne delamo praznih vrstic pred in za izrazom, razen se s formulo konča stavek.
+% 1. Ne delamo praznih vrstic pred in za izrazom, razen če se s formulo konča stavek.
 % 2. Izraz mora biti del stavka, ne sme stati kar prepuščen sam sebi.
 % 3. Če se z izrazom konča stavek ali odvisni stavek, zapišemo tudi ločilo.
 
@@ -212,7 +212,7 @@ ali
 
 \subsection{Okolje \texttt{gather}}
 
-Z okoljem \texttt{gather} stavimo izraze enega pod drugega:
+Z okoljem \texttt{gather} postavimo izraze enega pod drugega:
 %
 \begin{gather*}
   \log 2 = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots, \\
@@ -238,7 +238,7 @@ Narobe je
 \subsection{Okolje \texttt{multline}}
 
 Z okoljem \texttt{multtline} zapišemo daljšo izpeljavo čez več vrstic. Prva vrstica je
-poravnana levo, zadnja desno in vsem vmesne sredinsko:
+poravnana levo, zadnja desno in vse vmesne sredinsko:
 %
 \begin{multline*}
   \sum_{i=1}^n x_i^2 \cdot \sum_{i=1}^n y_i^2
@@ -383,7 +383,7 @@ velikosti.
   Parbola ima maksimum na zaprtem intervalu.
 \end{posledica}
 
-% Tu oprabimo \qedhere, da se znak kar v formlo.
+% Tu uporabimo \qedhere, da se znak vstavi kar v formulo.
 \begin{proof}
   To sledi iz računa
   %
