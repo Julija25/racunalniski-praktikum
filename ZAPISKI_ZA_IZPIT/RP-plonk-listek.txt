@@ -1,0 +1,39 @@
+# Ostalo
+
+Before downloading the app, right-click and select Scan with Microsoft Defender.
+
+Print Screen: fn+S
+
+Izbriši celo besedo na desni: Ctrl + Delete
+
+Zaganjanje aplikacij: Win + R
+
+Če tipkovnica zašteka: Shift + Alt
+
+Developer Tools: Ctrl+Shift+I
+
+# Naslov repezitorija: https://github.com/Julija25/racunalniski-praktikum
+
+# Visual Studio Code
+
+Show Command Palette: Ctrl+Shift+P, F1 (notri je Wrap with Abbreviation)
+
+Open Terminal: Ctrl+`
+
+Copying to Terminal: Shift+Insert
+
+* Ko v Terminalu odpiraš datoteke, ki imajo v imenu presledke, jih podaj med ' in '.
+
+Find: Ctrl+F
+
+Find & Replace: Ctrl + H
+
+Insert cursor: Alt+Click
+
+When writing HTML tags (značke), the Wrap with Abbreviation command from the Command Palette will help you.
+
+# LaTeX
+
+View: F7
+
+Insert cursor: Ctrl+Click
