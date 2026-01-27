@@ -1,5 +1,8 @@
 # Ostalo
 
+Ustvarjanje ZIP: izberi več datotek -> Send to -> Compressed (zipped) folder
+Razpakiravanje ZIP: desni klik + Extract all
+
 Before downloading the app, right-click and select Scan with Microsoft Defender.
 
 Print Screen: fn+S
@@ -12,11 +15,17 @@ Zaganjanje aplikacij: Win + R
 
 Developer Tools: Ctrl+Shift+I
 
-# Naslov repezitorija: https://github.com/Julija25/racunalniski-praktikum
+
+
+# Naslov šolskega repezitorija: https://github.com/Julija25/racunalniski-praktikum
+
+
 
 # Visual Studio Code
 
 Show Command Palette: Ctrl+Shift+P, F1 (notri je Wrap with Abbreviation)
+
+Dodaj kurzor pri vseh rezultatih iskanja: Alt + Enter
 
 Open Terminal: Ctrl+`
 
@@ -32,8 +41,240 @@ Insert cursor: Alt+Click
 
 When writing HTML tags (značke), the Wrap with Abbreviation command from the Command Palette will help you.
 
+
+
+# HTML
+
+Kodiranje dokumenta: <meta charset="UTF-8">. Te značke ni treba zaključiti. Prav tako ni treba zaključiti značke img: <img src="neki" alt="nekineki">.
+
+Tabele (<table>): 
+<thead> - table head (celice v glavi so obdane s to značko)
+<tbody> - table body (celice v sredini so obdane s to značko)
+<tfoot> - končna celica v tabeli (ni nujno, da jo uporabiš)
+<tr> - table rows (zapiše v stolpce)
+<th> - header cell (za <tr>, poudarjeno besedilo v celici) - sem pišemo besedilo
+<td> - data cell (za <tr>, celica z navadnimi podatki) - tudi sem pišemo besedilo
+<thead>,<tbody> in <tfoot> ne spremenijo izgleda tabele, ampak pomen.
+
+
+
+# CSS
+
+CSS vključite v HTML dokument v glavi z značko <link rel="stylesheet" href="ime_datoteke.css">.
+
+Primer 1: h2 {border-top: 1px solid #AAAAAA;}. Lahko zamenjaš vrstni red (1px solid #AAAAAA), med njimi ni vejic! Priporočilo: vedno piši širina → stil → barva. Ne pozabi na zaključni ; znak.
+
+Primer 2: h1 {background-color: rgb(51, 0, 102, 0.1)}. Tu so prve tri številke vrednosti za rdečo, zeleno in modro med 0 in 255, zadnja pa prosojnost med 0 (povsem prosojno) in 1 (neprosojno, privzeta vrednost). (Bolj pravilno bi bilo: rgba(51, 0, 102, 0.1), a - alpha in označuje prosojnost.)
+
+V CSS se decimalke vedno pišejo z piko, ne z vejico.
+
+
+
 # LaTeX
 
-View: F7
+Uporabno: orodje Detexify.
 
-Insert cursor: Ctrl+Click
+Primer 1: 
+\documentclass[a4paper,10pt]{article}
+\usepackage[slovene]{babel}
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}  
+
+Paketi: 
+amsmath (razna okolja za poravnane enačbe ipd., \text)
+amssymb (dodatni matematični simboli)
+amsthm (definicije okolij za izreke, definicije, ... , \theoremstyle, \newtheorem)
+hyperref (paket za povezave znotraj dokumenta in hiper-povezave)
+booktabs (doda boljše ukaze za vodoravne črte v tabelah: \toprule, \midrule, \bottomrule)
+multirow (za vnose v tabeli čez več vrstic)
+graphicx (za vstavljanje slik)
+makeidx (za izdelavo stvarnega kazala)
+tikz
+pgfplots (za risanje grafa funkcije)
+siunitx (za poravnavo na decimalni vejici v tabeli)
+
+UKAZI:
+Bolj pregledni ulomki: \dfrac
+Ležeča pisava: \textsl{}
+Poudarjena pisava: \emph{}
+Dodajanje opomb pod črto: \footnote{} (besedilo, ki se pojavi na dnu strani, ločeno od glavnega besedila)
+Pisane črke: \mathcal (ne rabiš posebnega paketa)
+Dvojne črke (matematika): \mathbb (paket amssymb)
+Ukaz, ki naredi stvarno kazalo, a ga ne prikaže (mora biti v preambuli): \makeindex
+
+Z ukazom label{oznaka} naredimo oznako razdelka, izreka ali enačbe. Na tako
+oznako se lahko sklicujemo z ukazi ref, pageref in eqref.
+
+\tableofcontents: ukaz, ki izpiše kazalo vsebine, na mestu, kjer ga postavimo
+\nocite{knjiga1} (v bibliografijo doda vire, tudi če jih v besedilu nisi citiral s \cite)
+\input (Recimo da imaš datoteko uvod.tex, v glavnni dokument napišeš: \input{uvod})
+\hline - horizontal line
+
+Bibliogrfijo damo v datoteko s končnico .bib. Uporabimo jo z ukazom \bibliography. Z ukazom \cite citiramo posamezne enote: \cite{bauer06}, lahko tudi več naenkrat: \cite{ersov80,lesnik10}. Bibliografijo vključiš tik pred konec dokumenta:
+\bibliographystyle{plain}
+\bibliography{literatura} (Datoteka za Bibtex)
+
+OKOLJA:
+Cases (za zavite oklepaje funkcij z različnimi pogoji, lahko uporabimo & za poravnavo:
+f(x) =
+\begin{cases}
+x^2, & x \ge 0 \\
+-x,  & x < 0
+\end{cases}
+Verbatim (ko želiš, da se besedilo izpiše točno tako, kot si ga napisal, npr. izpis programske kode),(podobno kot \texttt, a za daljša besedila)
+Equation (za enačbe, * se ne številči)
+
+Primer uporabe \href, \url:
+\begin{description}
+  \item[\href{http:// ... }{\emph{Ne najkrajši uvod v {\LaTeX}}}]
+  \item[\url{https:// ... }]
+\end{description}
+
+Znaki # $ % & \ ^ _ { } ~ imajo poseben pomen, saj se uporabljajo za komentarje, ukaze, matematični način itd. Če jih želimo zapisati, to storimo takole:
+\# , \$ , \% , \& , \textbackslash , \textasciicircum , \_ , \{ , \} , \textasciitilde.
+
+Takole napišemo `enojne' narekovaje. Dvoje (angleške) narekovaje
+pišemo ``takole''. Slovenski narekovaji so ">takšni"< ali pa "`takšni"'.
+
+Definicija okolja izrek:
+\theoremstyle{plain}
+\newtheorem{izrek}{Izrek}
+Uporaba:
+\begin{izrek}
+  ...
+\end{izrek}
+
+Definicija okolja za definicije:
+\theoremstyle{definition}
+\newtheorem{definicija}{Definicija}
+Uporaba:
+\begin{definicija}
+  ...
+\end{definicija}
+
+\newenvironment — za poljubna lastna okolja
+Primeri: 
+\newenvironment{dokaz}{\begin{proof}[Dokaz izreka]}{\end{proof}}
+
+\newenvironment{magic}[3]
+{
+\begin{table}[htbp]
+   \centering
+   \caption{#2}
+   \label{#3}
+   \large
+   \begin{tabular}{|*{#1}{c|}}
+   \hline
+}
+Uporaba:
+\begin{magic}{3}{Magični kvadrat reda 3}{table:mag3}
+       8 & 1 & 6 \\ \hline
+       3 & 5 & 7 \\ \hline
+       4 & 9 & 2 \\ \hline
+\end{magic}
+
+V LATEXu lahko defniramo svoje ukaze, ki jim pravimo tudi makroji. Ukaz defniramo z
+\newcommand{\imeUkaza}[n]{. . . }, pri čemer je n število argumentov, ki jih sprejme ukaz. Na argumente se sklicujemo z #1, #2, . . . , #n. Ukaz brez argumentov defniramo z \newcommand{\imeUkaza}{. . .}.
+Primeri:
+\newcommand{\RR}{\mathbb{R}} - realna števila, \mathbb{...} je iz amssymb
+\newcommand{\NN}{\mathbb{N}} - naravna števila
+\newcommand{\pair}[1]{\langle #1 \rangle} - npr. \pair{x, y}: ⟨x, y⟩
+
+Tabele:
+h = here (tukaj)
+t = top (na vrhu strani)
+p = page (na svoji strani)
+
+Primer tabele z booktabs:
+\begin{table}[htb]
+  \centering
+  \begin{tabular}{lrr}
+  \toprule
+  \textbf{Kandidat/Kandidatka} & \textbf{Odstotek} & \textbf{Število glasov} \\ \midrule
+  Ime Priimek 1   & 47,07\%   & 348.938 \\
+  Ime Priimek 2   & 24,96\%   & 185.042 \\
+  \bottomrule
+  \end{tabular}
+  \caption{Rezultati predsedniških volitev s paketom \texttt{booktabs}}
+  \label{tab:volitve-booktabs}
+\end{table}
+
+Primer vstavljanja slike: 
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.5\textwidth]{muca.jpg}
+  \caption{Muca}
+  \label{fig:muca}
+\end{figure}
+
+Več v: 3-tabele.tex
+
+Latex prosojnice:
+\title - poimenueš naslov predstavitve
+\titlepage - narediš naslov predstavitve (naslov se izpiše)
+\frametitle - naslov posamezne prosojnice
+
+\documentclass{beamer}
+\usetheme{Madrid} (za izbiro vizualne teme predstavitve)
+
+Okolja za poudarjene bloke so \block{}, \exampleblock{} in \alertblock{}. V zaviti oklepajih {} ni obvezno napisati naslova, bloki so lahko brez njega.
+
+S pomožnim parametrom <+-> lahko določimo, da se bodo elementi naštevanja odkrivali postopoma: npr. \begin{itemize}[<+->].
+Postopno odkrivanje: \pause, \onslide, \only ter določila <…> na ukazih, vključno z <+-> na seznamih (2-paketa-amsmath-amsfonts.tex).
+Primer: \only<1>{}, \onslide<2->{} in \onslide<3->{}:
+Frame - ena prosojnica (\begin{frame} ... \end{frame})
+Overlay - različne verzije iste prosojnice/stopnja odkrivanja iste prosojnice
+\only<1>{} - prikaži samo to vrstico na overlay 1
+\onslide<2->{} - prikaži to vrstico od overlay 2 naprej
+\onslide<3->{} - prikaži to vrstico od overlay 3 naprej
+
+Okolje column in ukaz \column: V Beamerju lahko frame razdeliš na več stolpcev. To je uporabno, če želiš na eni prosojnici prikazati besedilo in sliko ob strani ali primerjati dve stvari. (dokument 4-stolpci-slike.tex)
+Primer:
+\begin{frame}{Prosojnica 1}
+   \begin{columns}[c]
+	    \begin{column}{0.55\textwidth}
+		  \begin{itemize}
+			   \item<1-> Dani sta premica $p$ in točka $T$.
+			   \item<2-> Nariši lok $k$ s središčem v $T$.
+		   \end{itemize}
+        \end{column}
+		\begin{column}{0.45\textwidth}
+		  \includegraphics<1>[width=50mm]{slike/fig-1.png}% procent na levi je zato, da bo latex ignoriral presledke za slikami (slike bodo poravnane ena z drugo)
+		  \includegraphics<2>[width=50mm]{slike/fig-2.png}%
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+
+# Excel
+
+Angleški (-en): ločilo stolpcev je vejica, ločilo za decimalke je pika.
+Slovenski (-sl): ločilo stolpcev je podpičje, ločilo za decimalke je vejica.
+
+Za fiksiranje črk in številk polj uporabi $ pred črko/številko polja.
+
+
+
+# Mathematica
+
+Funkcije:
+preoblikovanje izrazov: Expand, Factor, Simplify
+vsote in limite: Sum, Limit
+odvodi in integrali (določeni in nedoločeni): D, Integrate
+simbolno in numerično reševanje sistemov enačb: Solve, NSolve
+poenostavljanje sistemov enačb in neenačb: Reduce
+numerično iskanje ničel: FindRoot
+risanje grafov: Plot, ContourPlot, RegionPlot, ParametricPlot, Plot3D
+
+Toplo priporočamo, da pri vsaki nalogi vse definicije napišete v isto celico, na začetku pa s pomočjo ClearAll počistite ustrezne spremenljivke.
+
+= - takojšnje prirejanje
+:= - zakasnjeno prirejanje
+npr. f[x_] := x^2
+
+unkcijo Solve lahko uporabimo za reševanje enačb.
+S funkcijo Reduce rešujemo neenačbe.
+
+// FullSimplify za poenostavljanje; na koncu vrstice, če ne želimo outputa
+/. replace all
